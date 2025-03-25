@@ -38,7 +38,7 @@ const QuotesApp = () => {
   return (
     <div className="container">
       <div className="quotes-app">
-        <h1 className="app-heading">Quote.</h1>
+        <h1 className="app-heading">Quotes...</h1>
         <i className="bx bxs-heart fav-icon" onClick={toggleFavorites}></i>
         <div className="quote">
           <i className="bx bxs-quote-alt-left left-quote"></i>
