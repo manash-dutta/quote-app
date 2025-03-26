@@ -11,14 +11,18 @@ const QuotesApp = () => {
   const [showFavorites, setShowFavorites] = useState(false);
 
   const fetchNewQuote = async () => {
-    // const url = "https://www.quoterism.com/api/quotes/random";
-    const url = "https://api.quotable.io/random";
-    const response = await fetch(url);
-    const data = await response.json();
-    setQuote({
-      text: data.content,
-      author: data.author,
-    });
+    try {
+      // const url = "https://www.quoterism.com/api/quotes/random";
+      const url = "https://api.quotable.io/random";
+      const response = await fetch(url);
+      const data = await response.json();
+      setQuote({
+        text: data.content,
+        author: data.author,
+      });
+    } catch (err) {
+      console.error("Error fetching quote", err);
+    }
   };
 
   const toggleFavorites = () => setShowFavorites(!showFavorites);
